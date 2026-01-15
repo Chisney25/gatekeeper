@@ -1,0 +1,14 @@
+[Unit]
+Description=Gatekeeper Log Monitor Sentry
+After=network.target nginx.service
+
+[Service]
+# We use sudo/root because it needs to read Nginx logs
+User=root
+WorkingDirectory=/home/devcontainers/gatekeeper
+ExecStart=/usr/bin/python3 /home/devcontainers/gatekeeper/sentry.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
