@@ -25,3 +25,10 @@ Gatekeeper is a secure Nginx web server implementation designed to serve custom 
 
 ## 🚨 Monitoring in Action
 When a user attempts to access a non-existent path, Nginx logs a 404, the Sentry script detects the entry, and a notification is dispatched to Discord with the offender's IP and attempted path.
+
+<img width="960" height="261" alt="Gatekeeper log monitor sentry" src="https://github.com/user-attachments/assets/3e1aaa43-97a0-430d-81e9-2dd03c013800" />
+
+<img width="677" height="107" alt="System-Guardian Intruder Alert" src="https://github.com/user-attachments/assets/c246a41a-9cc9-4c3a-95fa-72185795884a" />
+
+
+
