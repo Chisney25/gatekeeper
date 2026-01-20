@@ -32,8 +32,7 @@ When a user attempts to access a non-existent path, Nginx logs a 404, the Sentry
 
 <img width="677" height="107" alt="System-Guardian Intruder Alert" src="https://github.com/user-attachments/assets/c246a41a-9cc9-4c3a-95fa-72185795884a" />
 
-### 📈 Security Intelligence
-![Security Report](./intelligence_report.png)
+### Security Intelligence
 *Figure 3: Automated nightly intelligence report delivered via Discord.*
 
 <img width="680" height="243" alt="intelligence_report" src="https://github.com/user-attachments/assets/9f0a7179-b0c3-4821-8fcf-359931fc7031" />
