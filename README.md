@@ -36,3 +36,6 @@ When a user attempts to access a non-existent path, Nginx logs a 404, the Sentry
 ![Security Report](./intelligence_report.png)
 *Figure 3: Automated nightly intelligence report delivered via Discord.*
 
+<img width="680" height="243" alt="intelligence_report" src="https://github.com/user-attachments/assets/9f0a7179-b0c3-4821-8fcf-359931fc7031" />
+
+
