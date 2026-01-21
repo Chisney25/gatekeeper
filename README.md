@@ -9,6 +9,8 @@ Gatekeeper is a secure Nginx web server implementation designed to serve custom 
 - **Discord Integration:** Sends instant alerts to a security channel when a 404 trigger is detected.
 - **Daemonized Service:** Runs as a persistent `systemd` background process.
 - **Intelligence Reporting:** Custom `report.sh` script that parses Nginx logs to identify top offending IPs and targeted paths.
+- **The Bouncer** Implements active defense script `bouncer.sh` by monitoring for aggressive IP behavior.
+- **The Parole System** Automatically evaluates using a script `parole.sh` for "prisoners" and releases them from the firewall after a 24-hour cooling-off period.
 - **Nightly Briefings:** Automated cron-job that delivers a security summary to Discord every evening at 21:00. 
 
 ## Project Structure
@@ -37,4 +39,15 @@ When a user attempts to access a non-existent path, Nginx logs a 404, the Sentry
 
 <img width="680" height="243" alt="intelligence_report" src="https://github.com/user-attachments/assets/9f0a7179-b0c3-4821-8fcf-359931fc7031" />
 
+## Automation (Crontab)
+To ensure the Gatekeeper stays active, the following cronjobs are configured:
 
+```bash
+# Run the Bouncer at the top of every hour to catch offenders
+0 * * * * sudo /home/devcontainers/gatekeeper/bouncer.sh
+
+# Run the Parole Board at the bottom of every hour to clean the firewall
+30 * * * * sudo /home/devcontainers/gatekeeper/parole.sh
+
+# Send the nightly Intelligence Report at 21:00
+0 21 * * * /home/devcontainers/gatekeeper/report.sh
