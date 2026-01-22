@@ -1,0 +1,8 @@
+[nginx-sledgehammer]
+enabled  = true
+port     = http,https
+filter   = nginx-sledgehammer
+logpath  = /var/log/nginx/access.log
+maxretry = 3
+bantime  = 1h
+action   = discord-notifications
